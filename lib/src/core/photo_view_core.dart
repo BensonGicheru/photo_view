@@ -334,18 +334,12 @@ class PhotoViewCoreState extends State<PhotoViewCore>
               child: _buildHero(),
             );
 
-            final child = Container(
-              constraints: widget.tightMode
-                  ? BoxConstraints.tight(scaleBoundaries.childSize * scale)
-                  : null,
-              child: Center(
-                child: Transform(
-                  child: customChildLayout,
-                  transform: matrix,
-                  alignment: basePosition,
-                ),
+            final child = Center(
+              child: Transform(
+                child: customChildLayout,
+                transform: matrix,
+                alignment: basePosition,
               ),
-              decoration: widget.backgroundDecoration ?? _defaultDecoration,
             );
 
             if (widget.disableGestures) {
